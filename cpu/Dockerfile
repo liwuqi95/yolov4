@@ -1,4 +1,5 @@
 FROM tensorflow/serving:latest
+ENV DEBIAN_FRONTEND noninteractive
 
 RUN ln -sv /usr/bin/python3 /usr/bin/python
 

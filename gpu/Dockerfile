@@ -1,5 +1,5 @@
 FROM tensorflow/serving:latest-gpu
-
+ENV DEBIAN_FRONTEND noninteractive
 RUN ln -sv /usr/bin/python3 /usr/bin/python
 
 RUN apt-get update && apt-get install -y dirmngr gnupg wget python3-opencv python3-dev nginx
