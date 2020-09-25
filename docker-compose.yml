@@ -14,7 +14,7 @@ services:
     build:
       context: .
       dockerfile: gpu/Dockerfile
-    runtime: nvidia
+    #    runtime: nvidia
     ports:
       - 6998:80
 
