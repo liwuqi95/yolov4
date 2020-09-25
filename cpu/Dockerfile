@@ -14,8 +14,6 @@ RUN rm -f /etc/service/nginx/down
 ADD ./server/nginx.app.conf /etc/nginx/sites-enabled/app.conf
 
 RUN ln -sf /dev/stdout /var/log/nginx/access.log && ln -sf /dev/stderr /var/log/nginx/error.log
-CMD ["nginx", "-g", "daemon off;"]
-
 
 ENV PATH="/root/.local/bin:${PATH}"
 RUN wget https://bootstrap.pypa.io/get-pip.py && python3 get-pip.py --user && rm get-pip.py
@@ -23,3 +21,5 @@ RUN pip install --user tensorflow opencv-python flask requests
 RUN pip install --user numpy
 
 COPY /server /app
+
+CMD ["nginx", "-g", "daemon off;"]
