@@ -17,6 +17,6 @@ CMD ["nginx", "-g", "daemon off;"]
 
 ENV PATH="/root/.local/bin:${PATH}"
 RUN wget https://bootstrap.pypa.io/get-pip.py && python3 get-pip.py --user && rm get-pip.py
-RUN pip install --user tensorflow opencv-python flask numpy requests
+RUN pip install --user tensorflow opencv-python flask numpy==1.18.5 requests
 
 COPY /server /app
