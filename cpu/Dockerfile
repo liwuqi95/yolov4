@@ -22,4 +22,4 @@ RUN pip install --user numpy
 
 COPY /server /app
 
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["nginx"]
