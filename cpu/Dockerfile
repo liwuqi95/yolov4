@@ -1,6 +1,8 @@
 FROM tensorflow/serving:latest
 
-RUN apt-get update && apt-get install -y dirmngr gnupg wget python3-opencv python3-distutils nginx
+RUN ln -sv /usr/bin/python3 /usr/bin/python
+
+RUN apt-get update && apt-get install -y dirmngr gnupg wget python3-opencv python3-dev nginx
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 561F9B9CAC40B2F7
 RUN apt-get update && apt-get install -y apt-transport-https ca-certificates
 RUN sh -c 'echo deb https://oss-binaries.phusionpassenger.com/apt/passenger bionic main > /etc/apt/sources.list.d/passenger.list'
