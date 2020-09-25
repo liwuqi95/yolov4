@@ -1,6 +1,5 @@
 FROM tensorflow/serving:latest-gpu
 
-ENTRYPOINT []
 RUN ln -sv /usr/bin/python3 /usr/bin/python
 
 RUN apt-get update && apt-get install -y dirmngr gnupg wget python3-opencv python3-dev nginx
@@ -22,8 +21,7 @@ RUN pip install --user tensorflow opencv-python flask requests
 RUN pip install --user numpy
 
 COPY /server /app
-
 COPY /models /models
 
-
+ENTRYPOINT []
 CMD ["sh","-c", "nginx -g 'daemon on;' && /usr/bin/tf_serving_entrypoint.sh"]
