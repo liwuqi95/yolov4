@@ -25,4 +25,5 @@ COPY /server /app
 
 COPY /models /models
 
-CMD ["nginx", "-g", "daemon on;", " && /usr/bin/tf_serving_entrypoint.sh"]
+
+CMD ["sh","-c", "nginx -g 'daemon on;' && /usr/bin/tf_serving_entrypoint.sh"]
