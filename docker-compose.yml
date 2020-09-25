@@ -1,0 +1,27 @@
+version: "2.3"
+services:
+  detection-cpu:
+    image: detection-cpu:latest
+    container_name: detection-cpu
+    build:
+      context: .
+      dockerfile: cpu/Dockerfile
+    #runtime: nvidia
+    ports:
+      - 8501:8501
+#  detection-gpu:
+#    image: detection-cpu:latest
+#    container_name:  model-cpu
+#    build:
+#      context: .
+#      dockerfile: cpu/Dockerfile
+#    runtime: nvidia
+#    ports:
+#      - 8501:8501
+
+
+
+
+
+
+
