@@ -8,7 +8,7 @@ services:
       dockerfile: cpu/Dockerfile
     #runtime: nvidia
     ports:
-      - 8501:8501
+      - 6998:80
 #  detection-gpu:
 #    image: detection-cpu:latest
 #    container_name:  model-cpu
