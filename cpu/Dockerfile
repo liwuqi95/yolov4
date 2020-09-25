@@ -26,4 +26,4 @@ COPY /server /app
 COPY /models /models
 
 CMD ["nginx", "-g", "daemon off;"]
-CMD ["/usr/bin/tf_serving_entrypoint.sh"]
+#CMD ["/usr/bin/tf_serving_entrypoint.sh"]
