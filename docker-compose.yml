@@ -6,18 +6,17 @@ services:
     build:
       context: .
       dockerfile: cpu/Dockerfile
-    #runtime: nvidia
     ports:
       - 6998:80
-#  detection-gpu:
-#    image: detection-cpu:latest
-#    container_name:  model-cpu
-#    build:
-#      context: .
-#      dockerfile: cpu/Dockerfile
-#    runtime: nvidia
-#    ports:
-#      - 8501:8501
+  detection-gpu:
+    image: detection-gpu:latest
+    container_name:  detection-gpu
+    build:
+      context: .
+      dockerfile: gpu/Dockerfile
+    runtime: nvidia
+    ports:
+      - 6998:80
 
 
 
